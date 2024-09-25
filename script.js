@@ -1,3 +1,60 @@
+// Sélectionne le paragraphe
+const paragraph = document.querySelector('p');
+const originalText = paragraph.textContent;
+paragraph.innerHTML = '';
 
+// Crée un span pour chaque caractère
+const chars = originalText.split('').map(char => {
+  const span = document.createElement('span');
+  span.textContent = char;
+  span.style.display = 'inline-block';
+  paragraph.appendChild(span);
+  return span;
+});
 
-document.body.style.overflow = 'hidden'; document.body.style.backgroundColor = 'black'; const canvas = document.createElement('canvas'); document.body.appendChild(canvas); canvas.width = window.innerWidth; canvas.height = window.innerHeight; const ctx = canvas.getContext('2d'); const particles = []; class Particle {   constructor() {     this.x = Math.random() * canvas.width;     this.y = Math.random() * canvas.height;     this.size = Math.random() * 5 + 1;     this.speedX = Math.random() * 3 - 1.5;     this.speedY = Math.random() * 3 - 1.5;     this.color = `hsl(${Math.random() * 360}, 100%, 50%)`;   }   update() {     this.x += this.speedX;     this.y += this.speedY;     if (this.size > 0.2) this.size -= 0.1;     if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;     if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;   }   draw() {     ctx.fillStyle = this.color;     ctx.beginPath();     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);     ctx.fill();   } } function createParticles() {   for (let i = 0; i < 100; i++) {     particles.push(new Particle());   } } function animate() {   ctx.clearRect(0, 0, canvas.width, canvas.height);   particles.forEach((particle, index) => {     particle.update();     particle.draw();     if (particle.size <= 0.2) particles.splice(index, 1);   });   requestAnimationFrame(animate); } canvas.addEventListener('click', (event) => {   for (let i = 0; i < 10; i++) {     const particle = new Particle();     particle.x = event.x;     particle.y = event.y;     particles.push(particle);   } }); createParticles(); animate();
+// Fonction pour obtenir une position aléatoire
+const randomPosition = () => ({
+  x: (Math.random() - 0.5) * window.innerWidth * 0.8,
+  y: (Math.random() - 0.5) * window.innerHeight * 0.8
+});
+
+// Fonction pour animer les lettres
+function animateLetters() {
+  chars.forEach(span => {
+    const pos = randomPosition();
+    anime({
+      targets: span,
+      translateX: [0, pos.x, 0],
+      translateY: [0, pos.y, 0],
+      scale: [1, Math.random() + 0.5, 1],
+      rotate: [0, Math.random() * 360, 0],
+      duration: 2000 + Math.random() * 1000,
+      easing: 'easeInOutQuad',
+      complete: animateLetters
+    });
+  });
+}
+
+// Démarrer l'animation
+animateLetters();
+
+// Ajouter un effet de survol
+paragraph.addEventListener('mouseenter', () => {
+  anime({
+    targets: chars,
+    rotateY: '360deg',
+    scale: 1.2,
+    duration: 1000,
+    delay: anime.stagger(50)
+  });
+});
+
+paragraph.addEventListener('mouseleave', () => {
+  anime({
+    targets: chars,
+    rotateY: '0deg',
+    scale: 1,
+    duration: 1000,
+    delay: anime.stagger(50)
+  });
+});
