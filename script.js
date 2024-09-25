@@ -12,7 +12,7 @@ const chars = originalText.split('').map(char => {
   return span;
 });
 
-// Fonction pour obtenir une position aléatoire
+// Fonction pour obtenir une position aléatoir
 const randomPosition = () => ({
   x: (Math.random() - 0.5) * window.innerWidth * 0.8,
   y: (Math.random() - 0.5) * window.innerHeight * 0.8
