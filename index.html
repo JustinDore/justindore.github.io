@@ -1,221 +1,44 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon1.jpg" type="image/x-icon">
-    <title>ÉcoVert - Votre Jardinerie en Ligne</title>
-    <style>
-        :root {
-            --primary-color: #4CAF50;
-            --secondary-color: #45a049;
-            --text-color: #333;
-            --background-color: #f4f4f4;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        /* Hiérarchie visuelle */
-        header {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 1rem 0;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-right: 1rem;
-        }
-
-        nav ul li a {
-            color: var(--white);
-            text-decoration: none;
-        }
-
-        /* Proportions divines */
-        .hero {
-            height: 61.8vh;
-            background: url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-        }
-
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Loi de Hick et Espace blanc */
-        .products {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            padding: 4rem 0;
-        }
-
-        .product {
-            background-color: var(--white);
-            padding: 1rem;
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        .product img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-        }
-
-        /* Loi de Fitts */
-        .cta {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 1rem;
-        }
-
-        .cta:hover {
-            background-color: var(--secondary-color);
-        }
-
-        /* Règle des tiers */
-        .about {
-            display: flex;
-            align-items: center;
-            padding: 4rem 0;
-        }
-
-        .about-image {
-            flex: 1;
-            height: 400px;
-            background: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b') center/cover no-repeat;
-        }
-
-        .about-text {
-            flex: 2;
-            padding: 0 2rem;
-        }
-
-        /* Lois de la Gestalt */
-        footer {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-
-        /* Rasoir d'Occam */
-        @media (max-width: 768px) {
-            .products {
-                grid-template-columns: 1fr;
-            }
-
-            .about {
-                flex-direction: column;
-            }
-
-            .about-image {
-                width: 100%;
-                height: 200px;
-                margin-bottom: 1rem;
-            }
-        }
-    </style>
+    <link rel="icon" href="favicon1.jpg" type="image/jpeg">
+    <title>Plant Sales</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>ÉcoVert</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Accueil</a></li>
-                    <li><a href="#products">Produits</a></li>
-                    <li><a href="#about">À propos</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Welcome to Plant Paradise</h1>
+        <nav>
+            <ul>
+                <li><a href="#indoor-plants">Indoor Plants</a></li>
+                <li><a href="#outdoor-plants">Outdoor Plants</a></li>
+                <li><a href="#care">Plant Care</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <section class="hero" id="home">
-        <div class="container">
-            <h2>Cultivez votre passion pour les plantes</h2>
-            <a href="#products" class="cta">Découvrir nos produits</a>
-        </div>
-    </section>
-
-    <section class="products" id="products">
-        <div class="container">
+    <main>
+        <section id="featured">
+            <h2>Featured Plants</h2>
             <div class="product">
-                <img src="https://images.unsplash.com/photo-1453904300235-0f2f60b15b5d" alt="Plante d'intérieur">
-                <h3>Plantes d'intérieur</h3>
-                <p>Ajoutez une touche de verdure à votre espace de vie.</p>
-                <a href="#" class="cta">Acheter</a>
+                <img src="plant1.jpg" alt="Beautiful Plant 1">
+                <h3>Plant Name 1</h3>
+                <p>$29.99</p>
+                <button class="add-to-cart">Add to Cart</button>
             </div>
             <div class="product">
-                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b" alt="Plante d'extérieur">
-                <h3>Plantes d'extérieur</h3>
-                <p>Embellissez votre jardin avec nos variétés résistantes.</p>
-                <a href="#" class="cta">Acheter</a>
+                <img src="plant2.jpg" alt="Beautiful Plant 2">
+                <h3>Plant Name 2</h3>
+                <p>$39.99</p>
+                <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="product">
-                <img src="https://images.unsplash.com/photo-1509587584298-0f3b3a3a1797" alt="Accessoires de jardinage">
-                <h3>Accessoires</h3>
-                <p>Tout ce dont vous avez besoin pour prendre soin de vos plantes.</p>
-                <a href="#" class="cta">Acheter</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <div class="about-image"></div>
-        <div class="about-text">
-            <h2>À propos d'ÉcoVert</h2>
-            <p>Chez ÉcoVert, nous sommes passionnés par les plantes et l'environnement. Notre mission est de vous aider à créer des espaces verts magnifiques, que ce soit à l'intérieur ou à l'extérieur. Nous proposons une large gamme de plantes de haute qualité et des conseils d'experts pour vous aider à réussir votre jardin.</p>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="container">
-            <p>&copy; 2024 ÉcoVert. Tous droits réservés.</p>
-            <p>Contact : info@ecovert.com | Tél : 01 23 45 67 89</p>
-        </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Plant Paradise. All rights reserved.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
