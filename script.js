@@ -29,4 +29,27 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Image modal functionality
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const productImages = document.querySelectorAll('.product-image');
+    const closeBtn = document.getElementsByClassName('close')[0];
+
+    productImages.forEach(img => {
+        img.addEventListener('click', function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        });
+    });
+
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 });
