@@ -4,41 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon1.jpg" type="image/jpeg">
-    <title>Plant Sales</title>
+    <title>Plant Paradise - Your Online Plant Shop</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to Plant Paradise</h1>
+        <div class="logo">
+            <img src="logo.png" alt="Plant Paradise Logo">
+            <h1>Plant Paradise</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="#indoor-plants">Indoor Plants</a></li>
                 <li><a href="#outdoor-plants">Outdoor Plants</a></li>
                 <li><a href="#care">Plant Care</a></li>
                 <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
+        <section id="hero">
+            <h2>Bring Nature Indoors</h2>
+            <p>Discover our wide selection of beautiful plants for your home and garden.</p>
+            <a href="#featured" class="cta-button">Shop Now</a>
+        </section>
+
         <section id="featured">
             <h2>Featured Plants</h2>
-            <div class="product">
-                <img src="plant1.jpg" alt="Beautiful Plant 1">
-                <h3>Plant Name 1</h3>
-                <p>$29.99</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="plant2.jpg" alt="Beautiful Plant 2">
-                <h3>Plant Name 2</h3>
-                <p>$39.99</p>
-                <button class="add-to-cart">Add to Cart</button>
+            <div class="product-grid">
+                <div class="product">
+                    <img src="fiddle-leaf-fig.jpg" alt="Fiddle Leaf Fig">
+                    <h3>Fiddle Leaf Fig</h3>
+                    <p class="price">$29.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="snake-plant.jpg" alt="Snake Plant">
+                    <h3>Snake Plant</h3>
+                    <p class="price">$39.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="peace-lily.jpg" alt="Peace Lily">
+                    <h3>Peace Lily</h3>
+                    <p class="price">$34.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
             </div>
         </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>At Plant Paradise, we believe in bringing nature to your home. We offer a wide variety of plants suited for all environments, from indoor to outdoor.</p>
+            <img src="about-us.jpg" alt="Our Team" class="about-image">
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: info@plantparadise.com</p>
+            <p>Phone: (555) 123-4567</p>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
     </main>
+
     <footer>
         <p>&copy; 2024 Plant Paradise. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#" class="social-icon">Facebook</a>
+            <a href="#" class="social-icon">Instagram</a>
+            <a href="#" class="social-icon">Twitter</a>
+        </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
