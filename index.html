@@ -3,90 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paragraphe Animé</title>
-    <link rel="shortcut icon" href="/favicon1.jpg" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <title>Principes de Design Web</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            line-height: 1.6;
             margin: 0;
-            background-color: #f0f0f0;
-            overflow: hidden;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
         }
         .container {
-            text-align: center;
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
             padding: 20px;
-            background-color: white;
-            border-radius: 10px;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header h1 {
+            margin: 0;
+            text-align: center;
+            font-size: 2.5em;
+        }
+        .principle {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        p {
-            font-size: 24px;
-            line-height: 1.5;
-            color: #333;
+        .principle h2 {
+            color: #e8491d;
+            margin-top: 0;
+        }
+        .example {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        .cta {
+            display: inline-block;
+            background: #e8491d;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .grid-item {
+            background: #ddd;
+            padding: 20px;
+            text-align: center;
+        }
+        .golden-ratio {
+            width: 61.8%;
+            margin: 20px auto;
+            background: #ddd;
+            height: 200px;
+            position: relative;
+        }
+        .golden-ratio::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 61.8%;
+            height: 100%;
+            background: #bbb;
+        }
+        #addPrinciple {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #35424a;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
         }
-        span {
-            display: inline-block;
+        #addPrinciple:hover {
+            background-color: #2c3840;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Principes de Design Web</h1>
+    </header>
+
     <div class="container">
-        <p>Voici mon paragraphe animé. C'est vraiment trop stylé !</p>
+        <div id="principlesContainer">
+            <div class="principle">
+                <h2>Hiérarchie visuelle</h2>
+                <p>Mettez en avant les éléments importants et utilisez la taille, la couleur et le positionnement pour créer une hiérarchie claire.</p>
+                <div class="example">
+                    <h3>Exemple :</h3>
+                    <h1>Titre principal</h1>
+                    <h2>Sous-titre</h2>
+                    <p>Texte normal</p>
+                    <a href="#" class="cta">Appel à l'action</a>
+                </div>
+            </div>
+
+            <div class="principle">
+                <h2>Proportions divines</h2>
+                <p>Utilisez le nombre d'or (1,618) pour créer des proportions agréables visuellement.</p>
+                <div class="example">
+                    <h3>Exemple :</h3>
+                    <div class="golden-ratio"></div>
+                </div>
+            </div>
+
+            <div class="principle">
+                <h2>Loi de Hick</h2>
+                <p>Limitez les choix pour faciliter la prise de décision.</p>
+                <div class="example">
+                    <h3>Exemple :</h3>
+                    <select>
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="principle">
+                <h2>Règle des tiers</h2>
+                <p>Divisez les images en 9 parties égales et placez les éléments importants sur les lignes ou à leurs intersections.</p>
+                <div class="example">
+                    <h3>Exemple :</h3>
+                    <div style="width: 300px; height: 200px; background: #ddd; position: relative;">
+                        <div style="position: absolute; top: 33%; left: 33%; width: 10px; height: 10px; background: red; border-radius: 50%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="principle">
+                <h2>Lois de la Gestalt</h2>
+                <p>Utilisez la proximité, la similarité et la symétrie pour créer des ensembles cohérents.</p>
+                <div class="example">
+                    <h3>Exemple :</h3>
+                    <div class="grid">
+                        <div class="grid-item">1</div>
+                        <div class="grid-item">2</div>
+                        <div class="grid-item">3</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="principle">
+                <h2>Espace blanc</h2>
+                <p>Utilisez l'espace blanc pour créer un design "propre" et lisible.</p>
+                <div class="example">
+                    <h3>Exemple :</h3>
+                    <p style="margin: 20px; padding: 20px; background: #fff;">Ceci est un exemple de texte avec beaucoup d'espace blanc autour.</p>
+                </div>
+            </div>
+        </div>
+
+        <button id="addPrinciple">Ajouter un principe</button>
     </div>
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-    const paragraph = document.querySelector('p');
-    const text = paragraph.textContent;
-    paragraph.innerHTML = '';
-    
-    const chars = text.split('').map(char => {
-        const span = document.createElement('span');
-        span.textContent = char;
-        span.style.position = 'relative';
-        span.style.display = 'inline-block';
-        paragraph.appendChild(span);
-        return span;
-    });
+        const addPrincipleBtn = document.getElementById('addPrinciple');
+        const principlesContainer = document.getElementById('principlesContainer');
+        let principleCount = 6;
 
-    let mouse = { x: 0, y: 0 };
-    let containerRect = paragraph.getBoundingClientRect();
+        addPrincipleBtn.addEventListener('click', function() {
+            principleCount++;
+            const newPrinciple = document.createElement('div');
+            newPrinciple.className = 'principle';
+            newPrinciple.innerHTML = `
+                <h2>Nouveau Principe ${principleCount}</h2>
+                <p>Cliquez pour modifier la description du principe.</p>
+                <div class="example">
+                    <h3>Exemple :</h3>
+                    <p>Cliquez pour ajouter un exemple.</p>
+                </div>
+            `;
+            principlesContainer.appendChild(newPrinciple);
 
-    document.addEventListener('mousemove', (e) => {
-        mouse.x = e.clientX - containerRect.left;
-        mouse.y = e.clientY - containerRect.top;
-    });
+            newPrinciple.querySelector('p').addEventListener('click', function(e) {
+                const newText = prompt('Modifiez la description du principe:', e.target.textContent);
+                if (newText !== null) {
+                    e.target.textContent = newText;
+                }
+            });
 
-    function animate() {
-        chars.forEach((char, index) => {
-            const delay = (chars.length - index) * 0.02;
-            const targetX = mouse.x - char.offsetLeft - char.offsetWidth / 2;
-            const targetY = mouse.y - char.offsetTop - char.offsetHeight / 2;
-
-            const currentX = parseFloat(char.style.transform.split(',')[0].split('(')[1]) || 0;
-            const currentY = parseFloat(char.style.transform.split(',')[1]) || 0;
-
-            const newX = currentX + (targetX - currentX) * 0.1;
-            const newY = currentY + (targetY - currentY) * 0.1;
-
-            char.style.transform = `translate(${newX}px, ${newY}px)`;
-            char.style.transition = `transform ${delay}s ease-out`;
+            newPrinciple.querySelector('.example p').addEventListener('click', function(e) {
+                const newText = prompt('Ajoutez un exemple:', e.target.textContent);
+                if (newText !== null) {
+                    e.target.textContent = newText;
+                }
+            });
         });
-
-        requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    window.addEventListener('resize', () => {
-        containerRect = paragraph.getBoundingClientRect();
-    });
-});
     </script>
 </body>
 </html>
